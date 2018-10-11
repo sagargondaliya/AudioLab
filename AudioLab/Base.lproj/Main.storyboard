@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Song List View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="SongListViewController" id="BYZ-38-t0r" customClass="SongListViewController" customModule="AudioLab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="130" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g0l-VE-GB5">
+                                <rect key="frame" x="10" y="30" width="355" height="627"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="songViewCell" rowHeight="130" id="bRC-cJ-cbW" customClass="SongViewCell" customModule="AudioLab" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="355" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bRC-cJ-cbW" id="iHS-RI-LaW">
+                                            <rect key="frame" x="0.0" y="0.0" width="355" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eiI-g4-dbL">
+                                                    <rect key="frame" x="10" y="5" width="335" height="119.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song 1" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="djK-Ig-O1R">
+                                                            <rect key="frame" x="5" y="5" width="325" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xA1-lX-Z19" customClass="ProgressView" customModule="AudioLab" customModuleProvider="target">
+                                                            <rect key="frame" x="285" y="69.5" width="45" height="45"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="45" id="OiH-Gf-C77"/>
+                                                                <constraint firstAttribute="height" constant="45" id="otl-xg-w6v"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SA3-Ax-qTy">
+                                                            <rect key="frame" x="285" y="69.5" width="45" height="45"/>
+                                                            <state key="normal" image="download"/>
+                                                            <connections>
+                                                                <action selector="actionButtonTapped:" destination="bRC-cJ-cbW" eventType="touchUpInside" id="1xJ-TQ-6Tq"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="TFP-VM-zei">
+                                                            <rect key="frame" x="245" y="104.5" width="80" height="0.0"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="80" id="qce-nt-4sa"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QX0-Jm-hVR">
+                                                            <rect key="frame" x="5" y="105.5" width="225" height="2"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="2" id="fGP-Xc-RsM"/>
+                                                            </constraints>
+                                                            <color key="progressTintColor" red="1" green="0.30095589820000002" blue="0.25067347610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="trackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </progressView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.49748519510175798" green="0.50323582629304242" blue="0.5204877198668959" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstItem="SA3-Ax-qTy" firstAttribute="leading" secondItem="xA1-lX-Z19" secondAttribute="leading" id="1gW-Hn-8Y5"/>
+                                                        <constraint firstItem="QX0-Jm-hVR" firstAttribute="centerY" secondItem="TFP-VM-zei" secondAttribute="centerY" constant="2" id="2j7-Be-3d2"/>
+                                                        <constraint firstAttribute="bottom" secondItem="TFP-VM-zei" secondAttribute="bottom" constant="15" id="2xF-CH-tZZ"/>
+                                                        <constraint firstItem="SA3-Ax-qTy" firstAttribute="trailing" secondItem="xA1-lX-Z19" secondAttribute="trailing" id="50d-0s-oas"/>
+                                                        <constraint firstItem="SA3-Ax-qTy" firstAttribute="top" secondItem="xA1-lX-Z19" secondAttribute="top" id="5Ly-J9-Xtb"/>
+                                                        <constraint firstAttribute="bottom" secondItem="xA1-lX-Z19" secondAttribute="bottom" constant="5" id="8J7-2z-3mb"/>
+                                                        <constraint firstItem="TFP-VM-zei" firstAttribute="leading" secondItem="QX0-Jm-hVR" secondAttribute="trailing" constant="15" id="D9R-t2-24s"/>
+                                                        <constraint firstAttribute="trailing" secondItem="xA1-lX-Z19" secondAttribute="trailing" constant="5" id="FmT-ZU-zrq"/>
+                                                        <constraint firstItem="djK-Ig-O1R" firstAttribute="top" secondItem="eiI-g4-dbL" secondAttribute="top" constant="5" id="X7q-4I-cCF"/>
+                                                        <constraint firstItem="TFP-VM-zei" firstAttribute="trailing" secondItem="SA3-Ax-qTy" secondAttribute="trailing" constant="-5" id="bMa-cg-6fw"/>
+                                                        <constraint firstItem="QX0-Jm-hVR" firstAttribute="leading" secondItem="djK-Ig-O1R" secondAttribute="leading" id="dY5-5l-eLv"/>
+                                                        <constraint firstItem="SA3-Ax-qTy" firstAttribute="bottom" secondItem="xA1-lX-Z19" secondAttribute="bottom" id="jGm-Zz-MWB"/>
+                                                        <constraint firstAttribute="trailing" secondItem="djK-Ig-O1R" secondAttribute="trailing" constant="5" id="v9t-oK-uSs"/>
+                                                        <constraint firstItem="djK-Ig-O1R" firstAttribute="leading" secondItem="eiI-g4-dbL" secondAttribute="leading" constant="5" id="yfX-cq-tyD"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="eiI-g4-dbL" secondAttribute="bottom" constant="5" id="0tG-3l-6kw"/>
+                                                <constraint firstItem="eiI-g4-dbL" firstAttribute="top" secondItem="iHS-RI-LaW" secondAttribute="top" constant="5" id="fsS-wH-aWa"/>
+                                                <constraint firstAttribute="trailing" secondItem="eiI-g4-dbL" secondAttribute="trailing" constant="10" id="oUg-Jl-vfV"/>
+                                                <constraint firstItem="eiI-g4-dbL" firstAttribute="leading" secondItem="iHS-RI-LaW" secondAttribute="leading" constant="10" id="zAJ-d2-dT1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="actionButton" destination="SA3-Ax-qTy" id="2de-Ry-cCi"/>
+                                            <outlet property="containerView" destination="eiI-g4-dbL" id="zc1-ya-q1g"/>
+                                            <outlet property="progressIndicator" destination="QX0-Jm-hVR" id="RLM-P3-0VJ"/>
+                                            <outlet property="progressLabel" destination="TFP-VM-zei" id="age-5s-jS1"/>
+                                            <outlet property="progressView" destination="xA1-lX-Z19" id="eJ7-Fc-H46"/>
+                                            <outlet property="songNameLabel" destination="djK-Ig-O1R" id="4Wh-Pt-EgG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="d7g-6P-SKr"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="oag-K1-s34"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="g0l-VE-GB5" secondAttribute="bottom" constant="10" id="49J-Fq-Lml"/>
+                            <constraint firstItem="g0l-VE-GB5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Aeb-cN-ppc"/>
+                            <constraint firstItem="g0l-VE-GB5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="OXU-V5-m1A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="g0l-VE-GB5" secondAttribute="trailing" constant="10" id="R09-HX-1yY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="songTableView" destination="g0l-VE-GB5" id="0FN-Ed-syE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-282.39999999999998" y="37.331334332833585"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="download" width="31" height="22"/>
+    </resources>
+</document>
